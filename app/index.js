@@ -12,6 +12,7 @@ const home = require("./src/routes/home");
 //앱셋팅
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
+app.use(express.static(`${__dirname}/src/public`));
 
 app.use("/", home); //미들웨어를 구동시켜주는 메서드
 
