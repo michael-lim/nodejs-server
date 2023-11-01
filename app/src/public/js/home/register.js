@@ -7,7 +7,7 @@
 const id = document.querySelector("#id"),
       psword = document.querySelector("#psword"),
       confirmPsword = document.querySelector("#confirm-psword"),
-      registerBtn = document.querySelector("#registerBtn");
+      registerBtn = document.querySelector("#register-button");
 
       // console.log(id);
 
@@ -15,10 +15,13 @@ const id = document.querySelector("#id"),
 
       function register() {
         // console.log(id.value);
+
+        if(!id.value) return alert("아이디를 입력해주세요.");
+        if(psword.value !== confirmPsword.value) return alert("비밀번호가 일치하지 않습니다.");
+
         const req = {
           id: id.value,
           psword: psword.value,
-          confirmPsword: confirmPsword.value,
         }
 
         console.log(req);
@@ -46,7 +49,7 @@ const id = document.querySelector("#id"),
 
 
 
-$(".email-login").hide();
+$(".email-signup").hide();
 $("#signup-box-link").click(function(){
   $(".email-login").fadeOut(100);
   $(".email-signup").delay(100).fadeIn(100);
