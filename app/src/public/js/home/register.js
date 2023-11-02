@@ -16,8 +16,8 @@ function register() {
     psword: psword.value,
   }
 
-  console.log(req);
-  console.log(JSON.stringify(req));
+  // console.log(req);
+  // console.log(JSON.stringify(req));
   fetch("/register", {
     method: "POST",
     headers: {

@@ -3,6 +3,9 @@
 //모듈
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
 
 const PORT = 3000;
@@ -21,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/", home); //미들웨어를 구동시켜주는 메서드
 
-app.listen(PORT, function() {
+app.listen(precess.env.PORT, function() {
   console.log("서버가동");
 })
 
